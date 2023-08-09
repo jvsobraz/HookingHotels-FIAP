@@ -6,6 +6,7 @@ namespace HookingHotels.Web.Data
 {
     public class HookingDbContext : DbContext
     {
+        public HookingDbContext(DbContextOptions<HookingDbContext> options) : base(options) { }
         public DbSet<Hospede> Hospedes { get; set; }
         public DbSet<Quarto> Quartos { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
