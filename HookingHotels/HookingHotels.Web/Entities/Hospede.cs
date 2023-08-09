@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 namespace HookingHotels.Web.Entities;
 

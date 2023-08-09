@@ -1,7 +1,18 @@
+using HookingHotels.Web.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add services to the container.
+var oracleConnectionString = builder.Configuration.GetConnectionString("OracleDB");
+
+
+
+builder.Services.AddDbContext<HookingDbContext>(options =>
+    options.UseOracle(oracleConnectionString));
 
 var app = builder.Build();
 
